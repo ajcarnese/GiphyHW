@@ -15,10 +15,10 @@
 <body>
 
 <div id = "gifButtons">
-	<button class = "funButton" data-celeb = "Chuck+Norris"> Chuck </button>
-	<button class = "funButton" data-celeb = "Hasselhoff"> The Hoff </button>
+<!-- 	<button class = "funButton" data-celeb = "Chuck+Norris"> Chuck </button>
+	<button class = "funButton" data-celeb = "David+Hasselhoff"> The Hoff </button>
 	<button class = "funButton" data-celeb = "Nicholas+Cage"> Cage </button>
-	<button class = "funButton" data-celeb = "Jack+Black"> JB </button>
+	<button class = "funButton" data-celeb = "Jack+Black"> JB </button> -->
 </div>
 
 <div class = "container">
@@ -27,10 +27,20 @@
 	</div>
 	
 	<div id = "searchBar" class = "col-md-4 col-md-offset-1">
-		<h4> Add your own crazy celebrity </h4>
-			<form class="navbar-form navbar-left" role="search">
+
+    <form id="celeb-form">
+      <label for="celeb-input">Add your own crazy celebrity</label>
+      <input type="text" id="celeb-input"><br>
+
+      <!-- Button triggers new movie to be added -->
+      <input id="add-celeb" type="submit" value="Create a button!">
+    </form>
+
+
+<!-- 			<form class="navbar-form navbar-left" role="search">
 	  		<div class="form-group">
-	    		<input type="text" class="form-control" placeholder="Search">
+	    		<input type="text" class="form-control" placeholder="Type Here" id="celeb-input">
+	    		<input id="add-celeb" type="submit" value="Add a new button!"> -->
   			</div>
 	</div>
 
