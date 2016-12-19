@@ -1,45 +1,42 @@
 $( document ).ready(function() {
 
-  var celebArr = ["David Hasselhoff","Chuck Norris","Nic Cage","Jack Black"]
+  var celebArr = ["David Hasselhoff","Chuck Norris","Nic Cage","Jack Black","Tituss Burgess","Mr Bean","Christian Bale","Jim Carrey","Nick Offerman","Steve Carrell"]
 
   function createButtons(){
-    // Deleting the movie buttons prior to adding new movie buttons
-          // (this is necessary otherwise we will have repeat buttons)
+    //creating new buttons
+          
           $("#gifButtons").empty();
-          // Looping through the array of movies
+          // emptying the div will prevent button repeats
           for (var i = 0; i < celebArr.length; i++) {
-            // Then dynamicaly generating buttons for each movie in the array.
-            // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
+
             var a = $("<button>");
             // Adding a class
             a.addClass("funButton");
-            // Adding a data-attribute with a value of the movie at index i
+            // Adding the data attribute with the celebrity's name
             a.attr("data-celeb", celebArr[i]);
-            // Providing the button's text with a value of the movie at index i
+            // Providing the button's text with a value of the celeb at index i
             a.text(celebArr[i]);
-            // Adding the button to the HTML
+            // append to the buttons div
             $("#gifButtons").append(a);
           }
         }
-        // This function handles events where one button is clicked
-    $("#add-celeb").on("click", function(event) {
+        //add a button using the search form & button
+    $(document).on("click", "#add-celeb", function(event) {
         // event.preventDefault() prevents the form from trying to submit itself.
-        // We're using a form so that the user can hit enter instead of clicking the button if they want
         event.preventDefault();
-        debugger;
-        // The movie from the textbox is then added to our array
         celebArr.push($("#celeb-input").val().trim());
-        // calling renderButtons which handles the processing of our movie array
+        console.log(celebArr);
         createButtons();
       });
+
   createButtons();
 
-  $('button').on('click', function() {
+  $(document).on("click", ".funButton", function() {
   	
   	var topic = $(this).data('celeb');
       
       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-          topic + "&api_key=dc6zaTOxFJmzC&limit=3";
+          topic + "&api_key=dc6zaTOxFJmzC&limit=5";
 
       $.ajax({
             url: queryURL,

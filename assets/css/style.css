@@ -4,5 +4,21 @@
 
 .funButton {
 	margin: 5px;
+	background-color: blue;
+	border-style: groove;
+	padding: 8px;
+	color: white;
 }
 
+#page-title {
+	text-align: center;
+	font-weight: bold;
+}
+
+h1 {
+	font-family: 'Carter One', cursive;
+}
+
+h2 {
+	font-style: italic;
+}
