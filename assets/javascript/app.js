@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-  var celebArr = ["David Hasselhoff","Chuck Norris","Nic Cage","Jack Black","Tituss Burgess","Mr Bean","Christian Bale","Jim Carrey","Nick Offerman","Steve Carrell"]
+  var celebArr = ["David Hasselhoff","Chuck Norris","Nic Cage","Jack Black","Tituss Burgess","Mr Bean","Christian Bale","Jim Carrey", "Steve Carrell"]
 
   function createButtons(){
     //creating new buttons
@@ -36,7 +36,7 @@ $( document ).ready(function() {
   	var topic = $(this).data('celeb');
       
       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-          topic + "&api_key=dc6zaTOxFJmzC&limit=5";
+          topic + "&api_key=dc6zaTOxFJmzC&limit=3";
 
       $.ajax({
             url: queryURL,
@@ -49,8 +49,8 @@ $( document ).ready(function() {
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
-            	var celebDiv = $('<div>');
-            	var p = $("<p>").text("Rating: " + results[i].rating);
+            	var celebDiv = $('<span>');
+            	var p = $("<h2>").text("Rating: " + results[i].rating);
 
 
             	var celebImage = $("<img>");

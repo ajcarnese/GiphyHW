@@ -13,12 +13,24 @@
 #page-title {
 	text-align: center;
 	font-weight: bold;
+	background-color: transparent;
 }
 
 h1 {
 	font-family: 'Carter One', cursive;
+	font-size: 54px;
 }
 
 h2 {
 	font-style: italic;
+}
+
+#celeb-input {
+	width: 250px;
+}
+
+html {
+	background: url(../images/corkboard.jpg);
+	background-repeat:no-repeat;
+    background-size:cover;
 }
