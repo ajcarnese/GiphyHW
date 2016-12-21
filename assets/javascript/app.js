@@ -36,7 +36,7 @@ $( document ).ready(function() {
   	var topic = $(this).data('celeb');
       
       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-          topic + "&api_key=dc6zaTOxFJmzC&limit=3";
+          topic + "&api_key=dc6zaTOxFJmzC&limit=6";
 
       $.ajax({
             url: queryURL,
@@ -49,14 +49,20 @@ $( document ).ready(function() {
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
-            	var celebDiv = $('<span>');
-            	var p = $("<h2>").text("Rating: " + results[i].rating);
+            	var celebDiv = $('<div>');
+              celebDiv.addClass('col-md-2');
+              var gifLink = $("<a>").attr("href", results[i].url).attr("target","_blank").text("Rating: " + results[i].rating);
+            	var p = $("<button>");
+              p.addClass("ratings");
+              p.html(gifLink);
 
 
+              // generating images with tags
             	var celebImage = $("<img>");
             	celebImage.attr("src", results[i].images.fixed_height.url);
               celebImage.attr("alt",topic);
               celebImage.data("celeb",topic);
+              celebImage.addClass("gif");
               celebImage.data("still",results[i].images.fixed_height_still.url);
               celebImage.data("animate",results[i].images.fixed_height.url);
             	celebDiv.append(p);
@@ -64,6 +70,7 @@ $( document ).ready(function() {
 
               $("#gifSpace").prepend(celebDiv);
 
+              
             }
 
             // pausing the gifs on click

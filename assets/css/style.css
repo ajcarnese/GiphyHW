@@ -1,3 +1,7 @@
+body {
+	background-color: transparent;
+}
+
 #gifButtons {
 	margin: 20px;
 }
@@ -13,7 +17,9 @@
 #page-title {
 	text-align: center;
 	font-weight: bold;
-	background-color: transparent;
+	background: url(../images/celebstar.jpg);
+	background-size: contain;
+	color: whitesmoke;
 }
 
 h1 {
@@ -25,12 +31,27 @@ h2 {
 	font-style: italic;
 }
 
+h3 {
+	width: 25%;
+	text-align: center;
+	position: relative;
+
+}
+
 #celeb-input {
 	width: 250px;
 }
 
 html {
-	background: url(../images/corkboard.jpg);
-	background-repeat:no-repeat;
-    background-size:cover;
+	background-color: #87d6de;
+}
+
+.gif {
+	padding: 5px;
+	width: 255px;
+	height:210px;
+}
+
+.ratings {
+	width: 255px;
 }

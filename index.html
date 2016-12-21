@@ -20,38 +20,36 @@
 
 	<div class = "col-md-8" id="page-title">
 		<h1> Celebrity Gif Generator </h1>
-		<h2> Click the buttons for gif-tastic celebrities!</h2>
+		<h2> Click the blue buttons for gif-tastic celebrities!</h2>
+		<p> Click the ratings above the gif to view the original gif </p>
+		<p> Click the gif to freeze and unfreeze the fun </p>
 	</div>
 
 		<div class = "col-md-2"> 
-		<img src="assets/images/John Ritter.gif">
+		    <form id="celeb-form">
+     			 <img src="assets/images/jim.gif" style: height=150px;>
+      				<input type="text" id="celeb-input" placeholder="Add Your Own!">
+
+    			 <!-- Button triggers new movie to be added -->
+      			<input id="add-celeb" type="submit" value="Make a Button">
+    		</form>
+		</div>
+	
+	<div class="container">
+
+		<div id = "gifButtons">
+		<!-- buttons generate here -->
+		</div>
+
+	</div>
+	
+	<div id = "gifSpace">
+	<!-- Gifs generate here -->
+	</div>
+	
+
 	</div>
 
-<div id = "gifButtons">
-<!-- buttons generate here -->
-</div>
-
-<div class = "container">
-	
-	<div id = "gifSpace" class = "col-md-9">
-	</div>
-	
-	<div id = "searchBar" class = "col-md-2 col-md-offset-1">
-
-    <form id="celeb-form">
-      <!-- <label for="celeb-input">Add your own crazy celebrity</label> -->
-      <img src="assets/images/jim.gif" style: height=150px;>
-      
-      <input type="text" id="celeb-input" placeholder="Add Your Own!"><br>
-
-      <!-- Button triggers new movie to be added -->
-      <input id="add-celeb" type="submit" value="Make a Button">
-    </form>
-	
-  			</div>
-	</div>
-
-</div>
 
 </body>
 </html>
