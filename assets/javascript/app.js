@@ -51,7 +51,7 @@ $( document ).ready(function() {
             for (var i = 0; i < results.length; i++) {
             	var celebDiv = $('<div>');
               celebDiv.addClass('col-md-2');
-              var gifLink = $("<a>").attr("href", results[i].url).attr("target","_blank").text("Rating: " + results[i].rating);
+              var gifLink = $("<a>").attr("href", results[i].url).attr("target","_blank").text("Rated: " + results[i].rating);
             	var p = $("<button>");
               p.addClass("ratings");
               p.html(gifLink);
