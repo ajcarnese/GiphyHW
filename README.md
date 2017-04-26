@@ -1,2 +1,2 @@
 # GiphyHW
-Week 7 Homework - Giphy API gif generator
+Giphy API gif generator
