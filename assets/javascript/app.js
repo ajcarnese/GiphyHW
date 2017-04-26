@@ -63,8 +63,8 @@ $( document ).ready(function() {
               celebImage.attr("alt",topic);
               celebImage.data("celeb",topic);
               celebImage.addClass("gif");
-              celebImage.data("still",results[i].images.fixed_height_still.url);
-              celebImage.data("animate",results[i].images.fixed_height.url);
+              celebImage.attr("data-still",results[i].images.fixed_height_still.url);
+              celebImage.attr("data-animate",results[i].images.fixed_height.url);
             	celebDiv.append(p);
               celebDiv.append(celebImage);
 
@@ -74,15 +74,16 @@ $( document ).ready(function() {
             }
 
             // pausing the gifs on click
-              $("img").on("click", function() {
+              $(document).on("click", ".gif", function() {
                   console.log(this);
                   var state = $(this).attr("data-state");
+
                   if (state === "still") {
-                    $(this).attr("src", $(this).data("animate"));
+                    $(this).attr("src", $(this).attr("data-animate"));
                     $(this).attr("data-state", "animate");
                   } else {
                     
-                    $(this).attr("src", $(this).data("still"));
+                    $(this).attr("src", $(this).attr("data-still"));
                     $(this).attr("data-state", "still");
                   }
                 });//close on-click event for images
